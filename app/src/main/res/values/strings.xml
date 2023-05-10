@@ -3,4 +3,7 @@
     <string name="slogan">No matter where you are: whether you are at home, or in the office, or on the beach - we will find you and we will feed you</string>
     <string name="sign_up">Sign Up</string>
     <string name="sign_in">Sign In</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
 </resources>

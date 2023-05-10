@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/my_bg"
+    android:background="@drawable/background_top_view"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <info.hoang8f.widget.FButton
+        <Button
             android:id="@+id/btnSignUp"
             android:text="@string/sign_up"
             android:textColor="@android:color/white"
@@ -43,14 +43,18 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:backgroundTint="@color/btnSignUp"
+            style="?android:attr/buttonBarButtonStyle" />
+            <!--
             app:buttonColor="@color/btnSignUp"
             app:shadowColor="@android:color/black"
             app:shadowEnabled="true"
             app:shadowHeight="5dp"
             app:cornerRadius="4dp"
             />
+            -->
 
-        <info.hoang8f.widget.FButton
+        <Button
             android:id="@+id/btnSignIn"
             android:text="@string/sign_in"
             android:textColor="@android:color/white"
@@ -58,13 +62,17 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:backgroundTint="@color/btnSignActive"
+            style="?android:attr/buttonBarButtonStyle" />
+            <!--
             app:buttonColor="@color/btnSignActive"
             app:shadowColor="@android:color/black"
             app:shadowEnabled="true"
             app:shadowHeight="5dp"
             app:cornerRadius="4dp"
             />
+             -->
 
-    </LinearLayout>
+</LinearLayout>
 
 </RelativeLayout>

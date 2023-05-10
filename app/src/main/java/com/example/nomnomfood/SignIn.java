@@ -57,7 +57,7 @@ public class SignIn extends AppCompatActivity {
                                 Toast.makeText(SignIn.this, "Sign in successfully", Toast.LENGTH_SHORT).show();
                             }
                             else {
-                                Toast.makeText(SignIn.this, "Sign in failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignIn.this, "Incorrect password", Toast.LENGTH_SHORT).show();
                             }
                         }
                         else {
