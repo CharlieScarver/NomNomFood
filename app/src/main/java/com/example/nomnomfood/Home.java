@@ -101,7 +101,7 @@ public class Home extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull MenuViewHolder holder, int position, @NonNull Category model) {
                 holder.txtMenuName.setText(model.getName());
-                Picasso.with(getBaseContext()).load(model.getImage()).into(holder.imgView);
+                Picasso.get().load(model.getImage()).into(holder.imgView);
 
                 final Category clickItem = model;
                 holder.setItemClickListener(new ItemClickListener() {
