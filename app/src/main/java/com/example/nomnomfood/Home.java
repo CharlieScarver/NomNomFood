@@ -121,6 +121,7 @@ public class Home extends AppCompatActivity {
         };
 
         recyclerMenu.setAdapter(adapter);
+        adapter.startListening();
     }
 
     @Override
