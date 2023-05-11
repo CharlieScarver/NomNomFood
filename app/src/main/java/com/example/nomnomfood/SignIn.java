@@ -4,12 +4,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.nomnomfood.Common.Common;
 import com.example.nomnomfood.Model.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -53,8 +56,12 @@ public class SignIn extends AppCompatActivity {
                         if (snapshot.child(edtPhone.getText().toString()).exists()) {
                             // Get User information
                             User user = snapshot.child(edtPhone.getText().toString()).getValue(User.class);
-                            if (user.getPassword().equals(edtPassword.getText().toString())) {
+                            if (user != null && user.getPassword().equals(edtPassword.getText().toString())) {
                                 Toast.makeText(SignIn.this, "Sign in successfully", Toast.LENGTH_SHORT).show();
+                                Intent homeIntent = new Intent(SignIn.this, Home.class);
+                                Common.currentUser = user;
+                                startActivity(homeIntent);
+                                finish();
                             }
                             else {
                                 Toast.makeText(SignIn.this, "Incorrect password", Toast.LENGTH_SHORT).show();
@@ -67,7 +74,7 @@ public class SignIn extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
+                        Log.e("SignIn - onCancelled", error.getMessage());
                     }
                 });
             }
