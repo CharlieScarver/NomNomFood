@@ -63,7 +63,7 @@ public class Home extends AppCompatActivity {
         binding.appBarHome.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Coming soon", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -82,7 +82,7 @@ public class Home extends AppCompatActivity {
         // Set user's name in nav
         View headerView = navigationView.getHeaderView(0);
         txtName = headerView.findViewById(R.id.txtName);
-        txtName.setText(Common.currentUser.getName());
+        txtName.setText(getString(R.string.nav_header_title, Common.currentUser.getName()));
 
         // Load menu
         recyclerMenu = findViewById(R.id.recycler_menu);
