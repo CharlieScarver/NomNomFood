@@ -1,5 +1,6 @@
 package com.example.nomnomfood;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,13 +38,15 @@ public class Home extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityHomeBinding binding;
 
-    FirebaseDatabase database;
-    DatabaseReference category;
+    private FirebaseDatabase database;
+    private DatabaseReference category;
 
-    TextView txtName;
+    private TextView txtName;
 
-    RecyclerView recyclerMenu;
-    RecyclerView.LayoutManager layoutManager;
+    private RecyclerView recyclerMenu;
+    private RecyclerView.LayoutManager layoutManager;
+
+    private FirebaseRecyclerAdapter<Category, MenuViewHolder> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,7 +100,7 @@ public class Home extends AppCompatActivity {
         Query query = FirebaseDatabase.getInstance().getReference("Category");
         FirebaseRecyclerOptions<Category> options = new FirebaseRecyclerOptions.Builder<Category>().setQuery(query, Category.class).build();
 
-        FirebaseRecyclerAdapter<Category, MenuViewHolder> adapter = new FirebaseRecyclerAdapter<Category, MenuViewHolder>(options) {
+        adapter = new FirebaseRecyclerAdapter<Category, MenuViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull MenuViewHolder holder, int position, @NonNull Category model) {
                 holder.txtMenuName.setText(model.getName());
@@ -107,7 +110,10 @@ public class Home extends AppCompatActivity {
                 holder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(Home.this, ""+clickItem.getName(), Toast.LENGTH_SHORT).show();
+                        // Get Category Id and send it to the food list activity as extra string
+                        Intent foodList = new Intent(Home.this, FoodList.class);
+                        foodList.putExtra("CategoryId", adapter.getRef(position).getKey());
+                        startActivity(foodList);
                     }
                 });
             }
