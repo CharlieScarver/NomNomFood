@@ -108,7 +108,7 @@
 
                         <TextView
                             android:id="@+id/txtFoodPrice"
-                            android:layout_weight="9"
+                            android:layout_weight="3"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:text="@string/ph_food_price"
@@ -116,23 +116,24 @@
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
+                        <NumberPicker
+                            android:id="@+id/btnQuantity"
+                            android:layout_weight="6"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+
+                            android:textColor="@android:color/white" />
+                        <!--
+                            android:layout_marginTop="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginBottom="8dp"
+                            app:backGroundColor="@color/colorAccent"
+                            app:initialNumber="1"
+                            app:finalNumber="20"
+                        -->
+
                     </LinearLayout>
 
-                    <NumberPicker
-                        android:id="@+id/btnQuantity"
-                        android:layout_width="100dp"
-                        android:layout_height="30dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginStart="8dp"
-
-                        android:textColor="@android:color/white"
-                        android:background="@color/colorAccent" />
-                        <!--
-                        android:layout_marginBottom="8dp"
-                        app:backGroundColor="@color/colorAccent"
-                        app:initialNumber="1"
-                        app:finalNumber="20"
-                        -->
 
                 </LinearLayout>
                 

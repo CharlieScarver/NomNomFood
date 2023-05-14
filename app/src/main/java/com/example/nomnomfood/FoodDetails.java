@@ -44,6 +44,9 @@ public class FoodDetails extends AppCompatActivity {
 
         // Init view
         numberPicker = findViewById(R.id.btnQuantity);
+        numberPicker.setMinValue(0);
+        numberPicker.setMaxValue(20);
+
         btnCart = findViewById(R.id.btnCart);
 
         txtFoodName = findViewById(R.id.txtFoodName);
