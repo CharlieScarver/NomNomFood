@@ -70,7 +70,10 @@ public class FoodList extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull FoodViewHolder holder, int position, @NonNull Food model) {
                 holder.txtFoodName.setText(model.getName());
-                Picasso.get().load(model.getImage()).into(holder.imgFoodImage);
+                Picasso.get().load(model.getImage())
+                        .placeholder(R.drawable.default_food_item)
+                        .error(R.drawable.default_food_item)
+                        .into(holder.imgFoodImage);
 
                 final Food food = model;
                 holder.setItemClickListener(new ItemClickListener() {

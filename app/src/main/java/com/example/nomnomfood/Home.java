@@ -104,7 +104,10 @@ public class Home extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull MenuViewHolder holder, int position, @NonNull Category model) {
                 holder.txtMenuName.setText(model.getName());
-                Picasso.get().load(model.getImage()).into(holder.imgView);
+                Picasso.get().load(model.getImage())
+                        .placeholder(R.drawable.default_food_item)
+                        .error(R.drawable.default_food_item)
+                        .into(holder.imgView);
 
                 final Category clickItem = model;
                 holder.setItemClickListener(new ItemClickListener() {
