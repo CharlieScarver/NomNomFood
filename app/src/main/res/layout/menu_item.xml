@@ -4,10 +4,10 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    app:cardElevation="4dp">
+    app:cardElevation="4dp"
+    android:layout_marginBottom="16dp">
     
     <RelativeLayout
-        android:layout_marginBottom="16dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         
@@ -20,9 +20,9 @@
 
         <TextView
             android:id="@+id/txtMenuName"
-            android:text="Name of Menu"
+            android:text="@string/ph_name_of_menu"
             android:textColor="@android:color/white"
-            android:background="#4f0e0d0e"
+            android:background="#8f0e0d0e"
             android:textSize="20sp"
             android:gravity="center"
             android:layout_marginBottom="16dp"

@@ -19,4 +19,6 @@
     <string name="menu_orders">Orders</string>
     <string name="prefillPhone">0895195632</string>
     <string name="prefillPass">Pasta3!</string>
+    <string name="ph_name_of_food">Name of Food</string>
+    <string name="ph_name_of_menu">Name of Menu</string>
 </resources>
