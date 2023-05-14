@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class SignIn extends AppCompatActivity {
 
-    EditText edtPhone, edtName, edtPassword;
+    EditText edtPhone, edtPassword;
     Button btnSignIn;
 
     @Override
@@ -31,7 +31,6 @@ public class SignIn extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
 
         edtPhone = findViewById(R.id.edtPhone);
-        edtName = findViewById(R.id.edtName);
         edtPassword = findViewById(R.id.edtPassword);
 
         // Init Firebase
