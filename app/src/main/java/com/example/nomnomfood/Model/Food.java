@@ -1,75 +1,75 @@
 package com.example.nomnomfood.Model;
 
 public class Food {
-    private String name;
+    private String Name;
 
-    private String image;
+    private String Image;
 
-    private String description;
+    private String Description;
 
-    private String price;
+    private String Price;
 
-    private String discount;
+    private String Discount;
 
-    private String menuId;
+    private String MenuId;
 
     public Food() {
     }
 
     public Food(String name, String image, String description, String price, String discount, String menuId) {
-        this.name = name;
-        this.image = image;
-        this.description = description;
-        this.price = price;
-        this.discount = discount;
-        this.menuId = menuId;
+        this.Name = name;
+        this.Image = image;
+        this.Description = description;
+        this.Price = price;
+        this.Discount = discount;
+        this.MenuId = menuId;
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.Name = name;
     }
 
     public String getImage() {
-        return image;
+        return Image;
     }
 
     public void setImage(String image) {
-        this.image = image;
+        this.Image = image;
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.Description = description;
     }
 
     public String getPrice() {
-        return price;
+        return Price;
     }
 
     public void setPrice(String price) {
-        this.price = price;
+        this.Price = price;
     }
 
     public String getDiscount() {
-        return discount;
+        return Discount;
     }
 
     public void setDiscount(String discount) {
-        this.discount = discount;
+        this.Discount = discount;
     }
 
     public String getMenuId() {
-        return menuId;
+        return MenuId;
     }
 
     public void setMenuId(String menuId) {
-        this.menuId = menuId;
+        this.MenuId = menuId;
     }
 }

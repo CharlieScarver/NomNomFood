@@ -56,12 +56,12 @@ public class FoodList extends AppCompatActivity {
             categoryId = intent.getStringExtra("CategoryId");
         }
 
-        if (!categoryId.isEmpty() && categoryId != null) {
-            loadListFood(categoryId);
+        if (categoryId != null && !categoryId.isEmpty()) {
+            loadFoodList(categoryId);
         }
     }
 
-    private void loadListFood(String categoryId) {
+    private void loadFoodList(String categoryId) {
         // select * from Food where MenuId = {categoryId}
         Query query = foodList.orderByChild("MenuId").equalTo(categoryId);
         FirebaseRecyclerOptions<Food> options = new FirebaseRecyclerOptions.Builder<Food>().setQuery(query, Food.class).build();
@@ -90,7 +90,8 @@ public class FoodList extends AppCompatActivity {
             }
         };
 
-        Log.d("FoodList::loadlistFood", ""+adapter.getItemCount());
+        Log.d("FoodList::loadFoodList", ""+adapter.getItemCount());
         recyclerView.setAdapter(adapter);
+        adapter.startListening();
     }
 }
