@@ -15,6 +15,9 @@
         android:theme="@style/Theme.NomNomFood"
         tools:targetApi="31">
         <activity
+            android:name=".FoodDetails"
+            android:exported="false" />
+        <activity
             android:name=".FoodList"
             android:exported="false" />
         <activity

@@ -113,7 +113,7 @@ public class Home extends AppCompatActivity {
                 holder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        // Get Category Id and send it to the food list activity as extra string
+                        // Get Category Id and send it to the food list activity as an extra string
                         Intent foodList = new Intent(Home.this, FoodList.class);
                         foodList.putExtra("CategoryId", adapter.getRef(position).getKey());
                         startActivity(foodList);
