@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@android:color/white"
-            android:text="0895195632"
+            android:text="@string/prefillPhone"
             android:textColor="@android:color/white"
             android:textSize="34sp" />
             <!--
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@android:color/white"
-            android:text="Pasta3!"
+            android:text="@string/prefillPass"
             android:textColor="@android:color/white"
             android:textSize="34sp"
             android:inputType="textPassword" />

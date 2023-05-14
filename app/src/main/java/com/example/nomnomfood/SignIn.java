@@ -52,11 +52,12 @@ public class SignIn extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         mDialog.dismiss();
 
+                        String phone = edtPhone.getText().toString();
                         // Check if the user exists in the database
-                        if (snapshot.child(edtPhone.getText().toString()).exists()) {
+                        if (snapshot.child(phone).exists()) {
                             // Get User information
-                            User user = snapshot.child(edtPhone.getText().toString()).getValue(User.class);
-                            if (user != null && user.getPassword().equals(edtPassword.getText().toString())) {
+                            User user = snapshot.child(phone).getValue(User.class);
+                            if (user != null && user.getPassword() != null && user.getPassword().equals(edtPassword.getText().toString())) {
                                 Toast.makeText(SignIn.this, "Sign in successfully", Toast.LENGTH_SHORT).show();
                                 Intent homeIntent = new Intent(SignIn.this, Home.class);
                                 Common.currentUser = user;
@@ -64,11 +65,11 @@ public class SignIn extends AppCompatActivity {
                                 finish();
                             }
                             else {
-                                Toast.makeText(SignIn.this, "Incorrect password", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignIn.this, "Incorrect password", Toast.LENGTH_LONG).show();
                             }
                         }
                         else {
-                            Toast.makeText(SignIn.this, "User doesn't exist", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignIn.this, "User doesn't exist", Toast.LENGTH_LONG).show();
                         }
                     }
 

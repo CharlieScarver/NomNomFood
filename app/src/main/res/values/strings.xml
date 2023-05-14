@@ -17,4 +17,6 @@
     <string name="menu_menu">Menu</string>
     <string name="menu_cart">Cart</string>
     <string name="menu_orders">Orders</string>
+    <string name="prefillPhone">0895195632</string>
+    <string name="prefillPass">Pasta3!</string>
 </resources>
