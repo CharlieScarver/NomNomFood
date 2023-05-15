@@ -101,7 +101,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@drawable/attach_money_24"
+                            android:src="@drawable/euro_24"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content" />

@@ -25,7 +25,7 @@ public class Database extends SQLiteAssetHelper {
         SQLiteQueryBuilder builder = new SQLiteQueryBuilder();
 
         String[] sqlSelect = {"ProductName", "ProductId", "Quantity", "Price", "Discount"};
-        String sqlTable = "OrderDetail";
+        String sqlTable = "OrderDetails";
 
         builder.setTables(sqlTable);
         Cursor cursor = builder.query(db, sqlSelect, null, null, null, null, null);
@@ -55,5 +55,10 @@ public class Database extends SQLiteAssetHelper {
                 order.getPrice(),
                 order.getDiscount());
         db.execSQL(query);
+    }
+
+    public void cleanCart() {
+        SQLiteDatabase db = getReadableDatabase();
+        db.execSQL("DELETE FROM OrderDetails;");
     }
 }

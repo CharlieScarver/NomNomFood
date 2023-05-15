@@ -44,7 +44,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
                 .buildRound(order.getQuantity(), Color.RED);
         holder.imgCartItemCount.setImageDrawable(drawable);
 
-        Locale locale = new Locale("en", "GB");
+        Locale locale = new Locale("en", "DE");
         NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
         int price = Integer.parseInt(order.getPrice()) * Integer.parseInt(order.getQuantity());
         holder.txtCartItemPrice.setText(fmt.format(price));

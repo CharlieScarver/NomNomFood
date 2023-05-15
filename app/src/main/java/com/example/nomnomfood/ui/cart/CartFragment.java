@@ -119,7 +119,7 @@ public class CartFragment extends Fragment {
                         .setValue(request);
 
                 // Delete cart
-                //new Database(getActivity().getBaseContext()).cleanCart();
+                new Database(getActivity().getBaseContext()).cleanCart();
                 Toast.makeText(getContext(), "Your order is placed. Thank you!", Toast.LENGTH_LONG).show();
 
                 NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_home);
@@ -148,7 +148,7 @@ public class CartFragment extends Fragment {
             total += Integer.parseInt(order.getPrice()) * Integer.parseInt(order.getQuantity());
         }
 
-        Locale locale = new Locale("en", "GB");
+        Locale locale = new Locale("en", "DE");
         NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
         txtTotalPrice.setText(fmt.format(total));
     }

@@ -66,21 +66,6 @@ public class Home extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         category = database.getReference("Category");
 
-        binding.appBarHome.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                Snackbar.make(view, "Coming soon", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//                Intent cartIntent = new Intent(Home.this, CartFragment.class);
-
-//                CartFragment cartFragment = new CartFragment();
-//                FragmentManager fragmentManager = getSupportFragmentManager();
-//                fragmentManager.beginTransaction().replace(R.id.nav_host_fragment_content_home, cartFragment).commit();
-
-                NavController navController = Navigation.findNavController(Home.this, R.id.nav_host_fragment_content_home);
-                navController.navigate(R.id.nav_cart);
-            }
-        });
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
