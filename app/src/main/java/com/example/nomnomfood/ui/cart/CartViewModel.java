@@ -1,4 +1,4 @@
-package com.example.nomnomfood.ui.gallery;
+package com.example.nomnomfood.ui.cart;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

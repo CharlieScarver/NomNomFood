@@ -12,12 +12,15 @@ import android.widget.Toast;
 import com.example.nomnomfood.Common.Common;
 import com.example.nomnomfood.Model.Category;
 import com.example.nomnomfood.ViewHolder.MenuViewHolder;
+import com.example.nomnomfood.ui.cart.CartFragment;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -66,8 +69,16 @@ public class Home extends AppCompatActivity {
         binding.appBarHome.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Coming soon", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "Coming soon", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//                Intent cartIntent = new Intent(Home.this, CartFragment.class);
+
+//                CartFragment cartFragment = new CartFragment();
+//                FragmentManager fragmentManager = getSupportFragmentManager();
+//                fragmentManager.beginTransaction().replace(R.id.nav_host_fragment_content_home, cartFragment).commit();
+
+                NavController navController = Navigation.findNavController(Home.this, R.id.nav_host_fragment_content_home);
+                navController.navigate(R.id.nav_cart);
             }
         });
         DrawerLayout drawer = binding.drawerLayout;
@@ -109,7 +120,6 @@ public class Home extends AppCompatActivity {
                         .error(R.drawable.default_food_item)
                         .into(holder.imgView);
 
-                final Category clickItem = model;
                 holder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {

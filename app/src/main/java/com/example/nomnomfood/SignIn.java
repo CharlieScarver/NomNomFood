@@ -56,7 +56,9 @@ public class SignIn extends AppCompatActivity {
                         if (snapshot.child(phone).exists()) {
                             // Get User information
                             User user = snapshot.child(phone).getValue(User.class);
+
                             if (user != null && user.getPassword() != null && user.getPassword().equals(edtPassword.getText().toString())) {
+                                user.setPhone(phone);
                                 Toast.makeText(SignIn.this, "Sign in successfully", Toast.LENGTH_SHORT).show();
                                 Intent homeIntent = new Intent(SignIn.this, Home.class);
                                 Common.currentUser = user;

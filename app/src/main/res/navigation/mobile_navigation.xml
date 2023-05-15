@@ -12,8 +12,8 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.nomnomfood.ui.gallery.CartFragment"
+        android:id="@+id/nav_cart"
+        android:name="com.example.nomnomfood.ui.cart.CartFragment"
         android:label="@string/menu_cart"
         tools:layout="@layout/fragment_cart" />
 

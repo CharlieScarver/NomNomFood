@@ -3,7 +3,6 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
-        jcenter()
     }
 }
 dependencyResolutionManagement {
@@ -11,6 +10,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        // Additional
+        jcenter()
+        maven {
+            url 'https://dl.bintray.com/amulyakhare/maven'
+        }
     }
 }
 rootProject.name = "NomNomFood"
